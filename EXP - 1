@@ -1,0 +1,10 @@
+scenario = input("Enter business scenario: ").lower()
+
+if "bank" in scenario or "fraud" in scenario:
+    print("Threat Intelligence Area: Banking Fraud Prevention")
+elif "health" in scenario or "hospital" in scenario:
+    print("Threat Intelligence Area: Healthcare Data Protection")
+elif "shop" in scenario or "ecommerce" in scenario:
+    print("Threat Intelligence Area: E-Commerce Fraud Prevention")
+else:
+    print("Threat Intelligence Area: General Cybersecurity")

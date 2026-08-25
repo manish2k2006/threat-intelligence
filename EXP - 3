@@ -1,0 +1,32 @@
+policy = input("Enter security policy text:\n").lower()
+
+requirements = {
+    "scope": "Scope",
+    "roles": "Roles and Responsibilities",
+    "responsibilities": "Roles and Responsibilities",
+    "enforcement": "Enforcement",
+    "review": "Review Cycle",
+    "approval": "Approval Authority"
+}
+
+found = set()
+
+for keyword, name in requirements.items():
+    if keyword in policy:
+        found.add(name)
+
+print("\nPolicy Analysis:")
+
+all_requirements = [
+    "Scope",
+    "Roles and Responsibilities",
+    "Enforcement",
+    "Review Cycle",
+    "Approval Authority"
+]
+
+for item in all_requirements:
+    if item in found:
+        print(item, ": Present")
+    else:
+        print(item, ": Missing")

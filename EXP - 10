@@ -1,0 +1,14 @@
+network = {
+    "Low-Trust": ["Internet"],
+    "User": ["Low-Trust", "Server"],
+    "Sensitive": ["Admin"]
+}
+
+source = input("Enter source segment: ")
+destination = input("Enter destination segment: ")
+
+if destination in network.get(source, []):
+    print("ACCESS ALLOWED")
+else:
+    print("ACCESS BLOCKED")
+    print("Network segmentation prevents lateral movement.")

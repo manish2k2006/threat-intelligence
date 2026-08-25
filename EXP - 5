@@ -1,0 +1,15 @@
+report = input("Enter threat intelligence report description: ").lower()
+audience = input("Enter intended audience: ").lower()
+
+if any(word in report for word in ["business", "trend", "risk", "investment"]) \
+        or "executive" in audience or "ciso" in audience:
+    category = "Strategic"
+
+elif any(word in report for word in ["tactic", "technique", "mitre", "ttp"]) \
+        or "security team" in audience:
+    category = "Tactical"
+
+else:
+    category = "Operational"
+
+print("\nThreat Intelligence Type:", category)

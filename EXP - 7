@@ -1,0 +1,36 @@
+from collections import Counter
+
+logs = [
+    "INFO user=admin action=login",
+    "ERROR user=admin action=login",
+    "INFO user=user1 action=login",
+    "ERROR user=user2 action=login"
+]
+
+# Logstash-style parsing
+events = []
+
+for log in logs:
+    parts = log.split()
+
+    event = {
+        "level": parts[0],
+        "user": parts[1].split("=")[1],
+        "action": parts[2].split("=")[1]
+    }
+
+    events.append(event)
+
+# Elasticsearch-style indexing
+index = events
+
+print("Indexed Events:")
+for event in index:
+    print(event)
+
+# Kibana-style aggregation
+levels = Counter(event["level"] for event in index)
+
+print("\nLog Level Summary:")
+for level, count in levels.items():
+    print(level, ":", count)

@@ -1,0 +1,39 @@
+from urllib.parse import urlparse
+import re
+
+url = input("Enter URL: ")
+
+score = 0
+reasons = []
+
+suspicious_words = [
+    "login", "verify", "account", "secure",
+    "update", "password", "bank"
+]
+
+for word in suspicious_words:
+    if word in url.lower():
+        score += 1
+        reasons.append("Suspicious keyword: " + word)
+
+parsed = urlparse(url)
+domain = parsed.netloc
+
+if re.match(r"^\d+\.\d+\.\d+\.\d+$", domain):
+    score += 2
+    reasons.append("IP address used as domain")
+
+if domain.count(".") >= 3:
+    score += 1
+    reasons.append("Excessive subdomains")
+
+print("\nPhishing Analysis")
+
+if score >= 2:
+    print("Result: POSSIBLE PHISHING URL")
+else:
+    print("Result: URL appears less suspicious")
+
+print("\nReasons:")
+for reason in reasons:
+    print("-", reason)

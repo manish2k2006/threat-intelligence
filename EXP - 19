@@ -1,0 +1,19 @@
+events = [
+    {"user": "admin", "status": "failed"},
+    {"user": "john", "status": "success"},
+    {"user": "admin", "status": "failed"}
+]
+
+print("Failed Events:")
+
+for e in events:
+    if e["status"] == "failed":
+        print(e)
+
+count = {}
+
+for e in events:
+    user = e["user"]
+    count[user] = count.get(user, 0) + 1
+
+print("Count:", count)

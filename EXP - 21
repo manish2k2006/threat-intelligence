@@ -1,0 +1,15 @@
+report = input("Enter post-incident report: ").lower()
+
+areas = {
+    "patch management": "Patch Management",
+    "security awareness": "Security Awareness",
+    "monitoring": "Monitoring",
+    "backup": "Backup Strategy",
+    "access control": "Access Control"
+}
+
+print("Improvement Areas:")
+
+for key, value in areas.items():
+    if key in report:
+        print("-", value)

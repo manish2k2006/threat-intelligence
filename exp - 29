@@ -1,0 +1,12 @@
+incident = input("Enter incident: ").lower()
+
+if "malware" in incident:
+    print("Containment: Isolate infected system")
+elif "phishing" in incident:
+    print("Containment: Block phishing URL")
+elif "account" in incident:
+    print("Containment: Disable compromised account")
+elif "network" in incident:
+    print("Containment: Isolate affected network")
+else:
+    print("Containment: Investigate and monitor")

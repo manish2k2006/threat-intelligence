@@ -1,0 +1,19 @@
+required = {
+    "firewall": True,
+    "antivirus": True,
+    "backup": True,
+    "mfa": True
+}
+
+current = {
+    "firewall": True,
+    "antivirus": True,
+    "backup": False,
+    "mfa": False
+}
+
+for control in required:
+    if current[control] != required[control]:
+        print(control, "-> FAILED")
+    else:
+        print(control, "-> PASSED")

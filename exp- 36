@@ -1,0 +1,12 @@
+data = input("Enter system/data description: ").lower()
+
+if "credit card" in data or "payment" in data:
+    print("Standard: PCI-DSS")
+elif "health" in data or "medical" in data:
+    print("Standard: HIPAA")
+elif "personal data" in data or "privacy" in data:
+    print("Standard: GDPR")
+elif "financial report" in data:
+    print("Standard: SOX")
+else:
+    print("Standard: Unknown")

@@ -1,0 +1,15 @@
+logs = [
+    ("admin", "failed"),
+    ("admin", "failed"),
+    ("admin", "failed"),
+    ("admin", "success")
+]
+
+failed = 0
+
+for user, status in logs:
+    if user == "admin":
+        if status == "failed":
+            failed += 1
+        elif status == "success" and failed >= 3:
+            print("Brute-force attack detected!")

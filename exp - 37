@@ -1,0 +1,9 @@
+baseline = 3
+
+logins = [2, 3, 4, 8, 2]
+
+for login in logins:
+    print("Login attempts:", login)
+
+    if login > baseline:
+        print("ALERT: Abnormal login activity")

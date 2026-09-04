@@ -1,0 +1,12 @@
+events = [
+    "Firewall: Failed Login",
+    "Windows: Failed Login",
+    "VPN: Failed Login"
+]
+
+print("1. Collecting events...")
+print("2. Normalizing events...")
+print("3. Correlating events...")
+
+if len(events) >= 3:
+    print("ALERT: Possible Brute Force Attack")

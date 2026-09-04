@@ -1,0 +1,10 @@
+data = input("Enter activity: ").lower()
+
+if "known attacker" in data:
+    print("Intelligence-based Hunting")
+elif "unusual" in data or "anomaly" in data:
+    print("Analytics-based Hunting")
+elif "suspicious behavior" in data:
+    print("Hypothesis-based Hunting")
+else:
+    print("No threat found")

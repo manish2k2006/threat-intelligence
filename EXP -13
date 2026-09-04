@@ -1,0 +1,8 @@
+context = input("Has context? (yes/no): ")
+confidence = input("Confidence? (yes/no): ")
+action = input("Actionable? (yes/no): ")
+
+if context == "yes" and confidence == "yes" and action == "yes":
+    print("Genuine Threat Intelligence")
+else:
+    print("Raw / Unprocessed Data")

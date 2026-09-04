@@ -1,0 +1,17 @@
+logs = [
+    "192.168.1.1",
+    "192.168.1.1",
+    "192.168.1.1",
+    "192.168.1.1",
+    "192.168.1.1",
+    "192.168.1.2"
+]
+
+count = {}
+
+for ip in logs:
+    count[ip] = count.get(ip, 0) + 1
+
+for ip, requests in count.items():
+    if requests > 3:
+        print(ip, "-> Possible DoS Attack")

@@ -1,0 +1,16 @@
+traffic = [
+    ("192.168.1.10", "normal"),
+    ("10.0.0.5", "attack"),
+    ("192.168.1.20", "attack")
+]
+
+trusted = ["192.168.1.20"]
+
+for ip, data in traffic:
+
+    if ip in trusted:
+        print(ip, "-> ALLOWED (Trusted)")
+    elif data == "attack":
+        print(ip, "-> BLOCKED")
+    else:
+        print(ip, "-> ALLOWED")

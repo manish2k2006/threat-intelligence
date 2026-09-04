@@ -1,0 +1,12 @@
+text = input("Enter incident: ").lower()
+
+if "phishing" in text:
+    print("Root Cause: Phishing")
+elif "unpatched" in text:
+    print("Root Cause: Unpatched Vulnerability")
+elif "misconfiguration" in text:
+    print("Root Cause: Misconfiguration")
+elif "insider" in text:
+    print("Root Cause: Insider Threat")
+else:
+    print("Root Cause: Supply-Chain Compromise")

@@ -1,0 +1,17 @@
+import hashlib
+
+sample = input("Enter malware sample text: ")
+
+# Static analysis
+hash_value = hashlib.sha256(sample.encode()).hexdigest()
+
+print("SHA-256:", hash_value)
+
+if "CreateProcess" in sample or "DeleteFile" in sample:
+    print("Suspicious API found")
+
+# Dynamic analysis
+if "network" in sample.lower() or "execute" in sample.lower():
+    print("Suspicious behavior detected")
+else:
+    print("No suspicious behavior")

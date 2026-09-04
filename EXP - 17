@@ -1,0 +1,10 @@
+control = input("Enter control: ").lower()
+
+if "password" in control or "access" in control:
+    print("Domain: Access Control")
+elif "backup" in control:
+    print("Domain: Information Backup")
+elif "incident" in control:
+    print("Domain: Incident Management")
+else:
+    print("Domain: Other Annex A Control")

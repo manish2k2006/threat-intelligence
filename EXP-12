@@ -1,0 +1,10 @@
+alert = input("Enter alert: ").lower()
+
+if "ransomware" in alert or "critical" in alert:
+    print("Priority: P1")
+elif "malware" in alert:
+    print("Priority: P2")
+elif "suspicious" in alert:
+    print("Priority: P3")
+else:
+    print("Priority: P4")

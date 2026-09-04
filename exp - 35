@@ -1,0 +1,17 @@
+required = {
+    "admin": {"read", "write", "delete"},
+    "user": {"read"}
+}
+
+users = {
+    "Alice": ("admin", {"read", "write", "delete"}),
+    "Bob": ("user", {"read", "write"})
+}
+
+for name, (role, permissions) in users.items():
+    extra = permissions - required[role]
+
+    if extra:
+        print(name, "has excess access:", extra)
+    else:
+        print(name, "OK")

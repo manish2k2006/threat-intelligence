@@ -1,0 +1,7 @@
+firewall = ["10.0.0.5"]
+windows = ["10.0.0.5"]
+vpn = ["10.0.0.5"]
+
+for ip in firewall:
+    if ip in windows and ip in vpn:
+        print("ALERT: Brute-force attack detected from", ip)

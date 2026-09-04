@@ -1,0 +1,16 @@
+action = input("Enter incident response action: ").lower()
+
+if "prepare" in action:
+    print("Phase: Preparation")
+elif "identify" in action or "detect" in action:
+    print("Phase: Identification")
+elif "isolate" in action or "contain" in action:
+    print("Phase: Containment")
+elif "remove" in action or "eradicate" in action:
+    print("Phase: Eradication")
+elif "restore" in action or "recover" in action:
+    print("Phase: Recovery")
+elif "lesson" in action or "review" in action:
+    print("Phase: Lessons Learned")
+else:
+    print("Unknown Phase")

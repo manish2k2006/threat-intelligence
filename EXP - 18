@@ -1,0 +1,15 @@
+import hashlib
+
+file = input("Enter file name: ")
+
+with open(file, "rb") as f:
+    data = f.read()
+
+hash_value = hashlib.sha256(data).hexdigest()
+
+malicious = ["abc123"]
+
+if hash_value in malicious:
+    print("Malware Detected")
+else:
+    print("File is Safe")

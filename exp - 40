@@ -1,0 +1,14 @@
+task = input("Enter security task: ").lower()
+
+if "packet" in task or "sniff" in task:
+    print("Tool: Wireshark")
+elif "vulnerability" in task or "scan" in task:
+    print("Tool: Nmap")
+elif "log" in task or "siem" in task:
+    print("Tool: Splunk")
+elif "malware" in task:
+    print("Tool: Antivirus")
+elif "web" in task:
+    print("Tool: Burp Suite")
+else:
+    print("Tool: Not Found")

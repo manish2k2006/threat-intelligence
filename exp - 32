@@ -1,0 +1,9 @@
+properties = {
+    "Data privacy": ("Confidentiality", False),
+    "File modification": ("Integrity", True),
+    "Server availability": ("Availability", False)
+}
+
+for name, (cia, status) in properties.items():
+    if status == False:
+        print("Violated:", cia)

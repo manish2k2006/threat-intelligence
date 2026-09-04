@@ -1,0 +1,17 @@
+rules = [
+    ("TCP", 80, "ALLOW"),
+    ("TCP", 22, "ALLOW"),
+    ("TCP", 23, "DENY")
+]
+
+protocol = input("Enter protocol: ").upper()
+port = int(input("Enter port: "))
+
+action = "DENY"   # Default deny
+
+for p, prt, act in rules:
+    if protocol == p and port == prt:
+        action = act
+        break
+
+print("Firewall Action:", action)

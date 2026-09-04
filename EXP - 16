@@ -1,0 +1,16 @@
+layers = ["Firewall", "IDS", "Antivirus", "Authentication"]
+
+attack = input("Enter attack: ")
+
+blocked = False
+
+for layer in layers:
+    print(layer, "checked")
+
+    if layer == "Firewall" and attack == "blocked":
+        blocked = True
+
+if blocked:
+    print("Attack Blocked")
+else:
+    print("Other security layers provide protection")

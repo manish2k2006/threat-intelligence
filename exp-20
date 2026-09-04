@@ -1,0 +1,12 @@
+text = input("Enter incident: ").lower()
+
+if "phishing" in text or "fake link" in text:
+    print("Threat: Phishing")
+elif "ddos" in text or "denial" in text:
+    print("Threat: DoS/DDoS")
+elif "malware" in text or "virus" in text:
+    print("Threat: Malware")
+elif "intercept" in text or "middle" in text:
+    print("Threat: Man-in-the-Middle")
+else:
+    print("Unknown Threat")
